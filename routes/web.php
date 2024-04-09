@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DetailController;
@@ -32,9 +33,13 @@ Route::get('/shop/{slug?}', [ShopController::class, 'index']);
 
 
 
-Route::get('/cart', function () {
-    return view('pages.cart');
+Route::prefix('cart')->name('cart.')->group(function(){
+    Route::get('/',[CartController::class,'view'])->name('view');
+    Route::get('/add/{product}', [CartController::class ,'addToCart'])->name('add');
+    Route::get('/delete/{id}',[CartController::class,'deleteToCart'])->name('delete');
+    Route::get('/update/{id}',[CartController::class,'updateToCart'])->name('update');
 });
+
 
 Route::get('/checkout', function () {
     return view('pages.checkout');

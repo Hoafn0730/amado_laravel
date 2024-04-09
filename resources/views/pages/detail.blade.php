@@ -95,7 +95,7 @@
                     </div>
 
                     <!-- Add to Cart Form -->
-                    <form class="cart clearfix" method="post">
+                    <form action="{{route('cart.add', $product->id)}}" class="cart clearfix" method="get">
                         <div class="cart-btn d-flex mb-50">
                             <p>Số lượng</p>
                             <div class="quantity">

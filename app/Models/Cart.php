@@ -25,13 +25,9 @@ class Cart
         }else{
             $cart_item = (object)[
                 'id' => $product->id,
-                'catalog_id' => $product->catalog_id,
                 'name' => $product->name,
                 'price' => $product->price,
-                'image_link' => $product->image_link,
-                'created' => $product->created,
-                'view' => $product->view,
-                'title' => $product->title,
+                'image' => $product->image,
                 'quantity' => 1
             ];
             $this->items[$product->id] = $cart_item;

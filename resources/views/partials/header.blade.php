@@ -15,7 +15,7 @@
             <ul>
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="/shop">Shop</a></li>
-                <li><a href="/cart">Cart <span>(0)</span></a></li>
+                <li><a href="/cart">Cart <span>({{$cart->totalQuantity}})</span></a></li>
                 <li><a href="/checkout">Checkout</a></li>
             </ul>
         </nav>

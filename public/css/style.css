@@ -862,6 +862,7 @@ img {
   appearance: textfield;
   color: #242424;
   font-size: 14px;
+  padding-left: 10px;
 }
 @media only screen and (min-width:768px) and (max-width:991px) {
   .main-content-wrapper .cart-table-area table tbody tr td .qty-btn .quantity input {
@@ -877,6 +878,7 @@ img {
   text-align: center;
   height: 40px;
   cursor: pointer;
+  user-select: none;
   color: #242424;
   font-size: 10px;
 }
@@ -888,6 +890,7 @@ img {
   width: 20px;
   height: 40px;
   text-align: center;
+  user-select: none;
   cursor: pointer;
   color: #242424;
   font-size: 10px;
@@ -1336,6 +1339,8 @@ img {
 }
 .single-product-wrapper .product-img img {
   width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
