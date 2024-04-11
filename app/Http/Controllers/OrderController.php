@@ -66,11 +66,7 @@ class OrderController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            Order::find($id)->update([ 
-                'name' => $request->name, 
-                'slug' => Str::slug($request->name),
-                'image' => $request->image,
-            ]);
+            Order::find($id)->update($request->all());
             
             return  redirect('/orders')
             ->with('success', 'Sửa thành công');

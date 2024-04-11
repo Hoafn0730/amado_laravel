@@ -17,6 +17,7 @@
                 <li><a href="/shop">Shop</a></li>
                 <li><a href="/cart">Cart <span>({{$cart->totalQuantity}})</span></a></li>
                 <li><a href="/checkout">Checkout</a></li>
+                <li><a href="/invoice">Order</a></li>
             </ul>
         </nav>
         <!-- Button Group
@@ -26,7 +27,6 @@
     </div> -->
         <!--  Menu -->
         <div class="menu">
-
             <div class="search btn-action">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <span>Search</span>
@@ -37,6 +37,13 @@
                 <span>Hoafn0730</span>
             </div>
 
+        </div>
+
+        <div class="social-info d-flex justify-content-between mt-4">
+            <a href="#"><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
         </div>
     </div>
 </header>

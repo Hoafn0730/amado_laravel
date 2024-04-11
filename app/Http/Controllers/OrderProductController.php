@@ -35,7 +35,7 @@ class OrderProductController extends Controller
             OrderProduct::create($request->all());
 
             $product = Product::find($request->product_id);
-
+            
             $total = $product->price * $request->quantity;
             $order = Order::find($request->order_id);
             

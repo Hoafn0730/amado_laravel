@@ -104,7 +104,8 @@
                                 <i class="fa fa-star" aria-hidden="true"></i>
                             </div>
                             <div class="cart">
-                                <a href="/cart" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img
+                                <a href="{{route('cart.add', $product->id)}}" data-toggle="tooltip"
+                                    data-placement="left" title="Add to Cart"><img
                                         src="{{asset('img/core-img/cart.png')}}" alt=""></a>
                             </div>
                         </div>

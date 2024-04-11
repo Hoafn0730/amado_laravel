@@ -53,7 +53,7 @@ class Cart
     }
     
     public function clear() {
-        
+        session(['cart' => null]);
     }
 
     public function getTotalPrice() {

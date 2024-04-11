@@ -541,7 +541,7 @@ img {
             display: block;
         }
         .amado-nav {
-            margin-bottom: 90px;
+            margin-bottom: 56px;
 
             li {
                 a {
@@ -632,6 +632,22 @@ img {
                         color: $bg-default;
                     }
                 }
+            }
+        }
+        .social-info {
+            a {
+                color: #b5b5b5;
+                display: inline-block;
+                i {
+                    font-size: 18px;
+                }
+                &:hover,
+                &:focus {
+                    color: $bg-default;
+                }
+            }
+            @media #{$breakpoint-xs} {
+                margin-bottom: 75px;
             }
         }
     }
@@ -1419,23 +1435,6 @@ img {
                         }
                     }
                 }
-            }
-        }
-
-        .social-info {
-            a {
-                color: #b5b5b5;
-                display: inline-block;
-                i {
-                    font-size: 18px;
-                }
-                &:hover,
-                &:focus {
-                    color: $bg-default;
-                }
-            }
-            @media #{$breakpoint-xs} {
-                margin-bottom: 75px;
             }
         }
     }

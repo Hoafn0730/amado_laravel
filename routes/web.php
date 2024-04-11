@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderProductController;
@@ -30,20 +31,21 @@ use App\Http\Controllers\UserController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/products/{slug}', [DetailController::class, 'index']);
 Route::get('/shop/{slug?}', [ShopController::class, 'index']);
-
-
-
 Route::prefix('cart')->name('cart.')->group(function(){
     Route::get('/',[CartController::class,'view'])->name('view');
     Route::get('/add/{product}', [CartController::class ,'addToCart'])->name('add');
     Route::get('/delete/{id}',[CartController::class,'deleteToCart'])->name('delete');
     Route::get('/update/{id}',[CartController::class,'updateToCart'])->name('update');
 });
-
-
-Route::get('/checkout', function () {
-    return view('pages.checkout');
+Route::prefix('checkout')->name('checkout.')->group(function(){
+    Route::get('/',[CheckoutController::class,'view'])->name('view');
+    Route::post('/add', [CheckoutController::class ,'store'])->name('add');
 });
+
+Route::get('/invoice', function () {
+    return view('pages.invoice');
+});
+
 
 Route::get('/login', function () {
     return view('pages.login');
