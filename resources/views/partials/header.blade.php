@@ -17,7 +17,7 @@
                 <li><a href="/shop">Shop</a></li>
                 <li><a href="/cart">Cart <span>({{$cart->totalQuantity}})</span></a></li>
                 <li><a href="/checkout">Checkout</a></li>
-                <li><a href="/invoice">Order</a></li>
+                <li><a href="/invoice">Invoice</a></li>
             </ul>
         </nav>
         <!-- Button Group

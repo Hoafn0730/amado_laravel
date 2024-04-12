@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
-use Illuminate\Support\Number;
-use Illuminate\Support\Str;
 
 class CheckoutController extends Controller
 {
@@ -17,19 +14,19 @@ class CheckoutController extends Controller
 
     public function store(Request $request) {
         try {
- 
             $data = $request->all();
             $data['user_id'] = 1;
             $data['name_on_card'] = $request->first_name.' '.$request->last_name;
-            if ($request->discount_code) {
-                $data['discount'] = 1;
-            }
+           
+            // Check payment gateway
             if ($request->cod === 'on') {
-                # code...
                 $data['payment_gateway'] = 'cod';
             } else if ($request->paypal === 'on' ) {
-                # code...
                 $data['payment_gateway'] = 'paypal';
+            }
+            // chưa làm: Nếu tồi tại discount thì check loại discount và giảm giá total
+            if ($request->discount_code) {
+                $data['discount'] = 1;
             }
             $data['total'] = $request->cart['totalPrice'];
 
@@ -49,7 +46,8 @@ class CheckoutController extends Controller
             return redirect()->back()
             ->with('success', 'Tạo thành công');
         } catch (\Exception $e) {
-            return  redirect()->back()->withErrors('Thông tin bạn nhập đã tồn tại!'.$e->getMessage()); 
+            return  redirect()->back()
+            ->withErrors('Bạn đang không có sản phẩm nào trong giỏ hàng'); 
         }
         
     }

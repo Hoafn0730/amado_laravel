@@ -11,12 +11,9 @@
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="checkout_details_area mt-50 clearfix">
-
                         <div class="cart-title">
                             <h2>Thanh toán</h2>
                         </div>
-
-
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <input name="first_name" type="text" class="form-control" id="first_name" value=""

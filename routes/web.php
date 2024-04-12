@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductTagController;
@@ -42,9 +43,7 @@ Route::prefix('checkout')->name('checkout.')->group(function(){
     Route::post('/add', [CheckoutController::class ,'store'])->name('add');
 });
 
-Route::get('/invoice', function () {
-    return view('pages.invoice');
-});
+Route::get('/invoice', [InvoiceController::class, 'index']);
 
 
 Route::get('/login', function () {
