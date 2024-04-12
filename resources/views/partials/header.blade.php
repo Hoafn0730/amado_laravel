@@ -13,11 +13,11 @@
         <!-- Amado Nav -->
         <nav class="amado-nav">
             <ul>
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/cart">Cart <span>({{$cart->totalQuantity}})</span></a></li>
-                <li><a href="/checkout">Checkout</a></li>
-                <li><a href="/invoice">Invoice</a></li>
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/shop">Cửa hàng</a></li>
+                <li><a href="/cart">Giỏ hàng <span>({{$cart->totalQuantity}})</span></a></li>
+                <li><a href="/checkout">Thanh toán</a></li>
+                <li><a href="/invoice">Hóa đơn</a></li>
             </ul>
         </nav>
         <!-- Button Group
@@ -29,7 +29,7 @@
         <div class="menu">
             <div class="search btn-action">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <span>Search</span>
+                <span>Tìm kiếm</span>
             </div>
             <div class="user-menu btn-action">
                 <img class="avatar" src="https://files.fullstack.edu.vn/f8-prod/user_avatars/330533/656b17e84ff15.jpg"

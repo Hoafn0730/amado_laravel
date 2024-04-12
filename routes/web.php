@@ -14,6 +14,7 @@ use App\Http\Controllers\OrderProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductTagController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 
@@ -42,8 +43,8 @@ Route::prefix('checkout')->name('checkout.')->group(function(){
     Route::get('/',[CheckoutController::class,'view'])->name('view');
     Route::post('/add', [CheckoutController::class ,'store'])->name('add');
 });
-
 Route::get('/invoice', [InvoiceController::class, 'index']);
+Route::get('/search', [SearchController::class, 'index']);
 
 
 Route::get('/login', function () {

@@ -14,8 +14,8 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Name</th>
-                                <th>Price</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Giá</th>
                                 <th></th>
 
                             </tr>
@@ -68,12 +68,12 @@
                 <div class="cart-summary">
                     <h5>Cart Total</h5>
                     <ul class="summary-table">
-                        <li><span>subtotal:</span> <span>{{$cart->totalPrice}}đ</span></li>
-                        <li><span>delivery:</span> <span>Free</span></li>
-                        <li><span>total:</span> <span>{{$cart->totalPrice}}đ</span></li>
+                        <li><span>Tổng phụ:</span> <span>{{$cart->totalPrice}}đ</span></li>
+                        <li><span>Phí vận chuyển:</span> <span>Free</span></li>
+                        <li><span>Tổng tiền:</span> <span>{{$cart->totalPrice}}đ</span></li>
                     </ul>
                     <div class="cart-btn mt-100">
-                        <a href="/checkout" class="btn amado-btn w-100">Checkout</a>
+                        <a href="/checkout" class="btn amado-btn w-100">Thanh toán</a>
                     </div>
                 </div>
             </div>

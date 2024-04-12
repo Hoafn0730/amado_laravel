@@ -30,21 +30,27 @@ class CheckoutController extends Controller
             }
             $data['total'] = $request->cart['totalPrice'];
 
-            $order = Order::create($data);
-            $orderId = $order->id;
             $data_products = $request->cart['items'];
-            foreach ($data_products as $item) {
-                OrderProduct::create([
-                    'order_id' => $orderId,
-                    'product_id' => $item['id'],
-                    'quantity' => $item['quantity'],
-                ]);
+            if (is_array($data_products) && count($data_products) > 0) {
+                $order = Order::create($data);
+                $orderId = $order->id;
+                foreach ($data_products as $item) {
+                    OrderProduct::create([
+                        'order_id' => $orderId,
+                        'product_id' => $item['id'],
+                        'quantity' => $item['quantity'],
+                    ]);
+                }
+    
+                session()->forget('cart');
+                return redirect()->back()
+                ->with('success', 'Tạo thành công');
+            } else {
+                return  redirect()->back()
+                ->withErrors('Bạn đang không có sản phẩm nào trong giỏ hàng'); 
             }
 
-            session()->forget('cart');
-            
-            return redirect()->back()
-            ->with('success', 'Tạo thành công');
+        
         } catch (\Exception $e) {
             return  redirect()->back()
             ->withErrors('Bạn đang không có sản phẩm nào trong giỏ hàng'); 

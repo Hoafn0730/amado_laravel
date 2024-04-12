@@ -1,41 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="shop_sidebar_area">
-
-    <!-- ##### Single Widget ##### -->
-    <div class="widget catagory mb-50">
-        <!-- Widget Title -->
-        <h6 class="widget-title mb-30">Thể loại</h6>
-
-        <!--  Catagories  -->
-        <div class="catagories-menu">
-            <ul>
-                @foreach($categories as $category)
-                <li class="{{$categoryCurrent == $category->slug ? 'active' : ''}}"><a
-                        href="/shop/{{$category->slug}}">{{$category->name}}</a>
-                </li>
-                @endforeach
-
-                <!-- <li><a href="#">Beds</a></li>
-                <li><a href="#">Accesories</a></li>
-                <li><a href="#">Furniture</a></li>
-                <li><a href="#">Home Deco</a></li>
-                <li><a href="#">Dressings</a></li>
-                <li><a href="#">Tables</a></li> -->
-            </ul>
-        </div>
-    </div>
-
-
-</div>
-
-<div class="amado_product_area section-padding-100">
+<div class="products-catagories-area">
     <div class="container-fluid">
+
 
         <div class="row">
             <div class="col-12">
                 <div class="product-topbar d-xl-flex align-items-end justify-content-between">
+                    <div>
+                        <h2 class="cart-title mt-50">Tìm kiếm</h2>
+                        <p>{{$products->count()}} kết quả cho từ khóa "{{$query}}"</p>
+                    </div>
                     <!-- Total Products -->
                     <div class="total-products">
                         <p>Hiển thị {{$products->currentPage()}}-8 0f {{$products->count()}}</p>
@@ -44,30 +20,7 @@
                             <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                    <!-- Sorting -->
-                    <div class="product-sorting d-flex">
-                        <div class="sort-by-date d-flex align-items-center mr-15">
-                            <p>Sort by</p>
-                            <form action="#" method="get">
-                                <select name="select" id="sortBydate">
-                                    <option value="value">Date</option>
-                                    <option value="value">Newest</option>
-                                    <option value="value">Popular</option>
-                                </select>
-                            </form>
-                        </div>
-                        <div class="view-product d-flex align-items-center">
-                            <p>View</p>
-                            <form action="#" method="get">
-                                <select name="select" id="viewProduct">
-                                    <option value="value">12</option>
-                                    <option value="value">24</option>
-                                    <option value="value">48</option>
-                                    <option value="value">96</option>
-                                </select>
-                            </form>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -75,7 +28,7 @@
         <div class="row">
             @foreach($products as $product)
             <!-- Single Product Area -->
-            <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+            <div class="col-12 col-sm-4 col-md-12 col-xl-4">
                 <div class="single-product-wrapper">
                     <!-- Product Image -->
                     <div class="product-img">
@@ -124,23 +77,13 @@
                     <ul class="pagination justify-content-end mt-50">
 
                         {{$products->links()}}
-                        <!--                         
-                        <li class="page-item active">
-                            <a class="page-link" href="#">01.</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">02.</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">03.</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">04.</a>
-                        </li> -->
+
                     </ul>
                 </nav>
             </div>
         </div>
     </div>
 </div>
+
+
 @endsection

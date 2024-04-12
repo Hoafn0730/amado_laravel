@@ -17,19 +17,19 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <input name="first_name" type="text" class="form-control" id="first_name" value=""
-                                    placeholder="First Name" required>
+                                    placeholder="Tên" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <input name="last_name" type="text" class="form-control" id="last_name" value=""
-                                    placeholder="Last Name" required>
+                                    placeholder="Họ" required>
                             </div>
                             <div class="col-12 mb-3">
                                 <input name="address" type="text" class="form-control" id="address"
-                                    placeholder="Address" value="">
+                                    placeholder="Địa chỉ" value="">
                             </div>
                             <div class="col-12 mb-3">
-                                <input name="phone" type="text" class="form-control" id="phone" placeholder="Phone"
-                                    value="">
+                                <input name="phone" type="text" class="form-control" id="phone"
+                                    placeholder="Số điện thoại" value="">
                             </div>
 
                         </div>
@@ -37,18 +37,18 @@
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="cart-summary">
-                        <h5>Cart Total</h5>
+                        <h5>Tổng số giỏ hàng</h5>
                         <ul class="summary-table">
-                            <li><span>subtotal:</span> <span>{{$cart->totalPrice}}đ</span></li>
-                            <li><span>delivery:</span> <span>Free</span></li>
-                            <li><span>total:</span> <span>{{$cart->totalPrice}}đ</span></li>
+                            <li><span>Tổng phụ:</span> <span>{{$cart->totalPrice}}đ</span></li>
+                            <li><span>Phí vận chuyển:</span> <span>Free</span></li>
+                            <li><span>Tổng tiền:</span> <span>{{$cart->totalPrice}}đ</span></li>
                         </ul>
 
                         <div class="payment-method">
                             <!-- Cash on delivery -->
                             <div class="custom-control custom-checkbox mr-sm-2">
                                 <input name="cod" type="checkbox" class="custom-control-input" id="cod" checked>
-                                <label class="custom-control-label" for="cod">Cash on Delivery</label>
+                                <label class="custom-control-label" for="cod">Thanh toán khi giao hàng</label>
                             </div>
                             <!-- Paypal -->
                             <div class="custom-control custom-checkbox mr-sm-2">
@@ -62,9 +62,9 @@
                         </div>
 
                         <div class="mt-50">
-                            <label for="coupon">Coupon:</label>
+                            <label for="coupon">Mã giảm giá:</label>
                             <input name="discount_code" id="coupon" type="text" class="form-control"
-                                placeholder="Enter coupon">
+                                placeholder="Mã giảm giá">
                         </div>
 
                         <div class="cart-btn mt-4">

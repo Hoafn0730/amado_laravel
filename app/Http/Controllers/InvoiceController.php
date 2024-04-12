@@ -26,7 +26,7 @@ class InvoiceController extends Controller
         'users.name as user_name')
         ->where('orders.user_id', '=', $user_id)
         ->get();
-        
+
         return view('pages.invoice', ['orders'=> $orders]);
     }
 

@@ -13,9 +13,8 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>
                         document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &
-                        Re-distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a>
+                        </script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#"
+                            target="_blank">Hoafn.t_</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
@@ -32,19 +31,19 @@
                             <div class="collapse navbar-collapse" id="footerNavContent">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.html">Home</a>
+                                        <a class="nav-link" href="/">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="shop.html">Shop</a>
+                                        <a class="nav-link" href="/shop">Shop</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="product-details.html">Product</a>
+                                        <a class="nav-link" href="/cart">Cart</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="cart.html">Cart</a>
+                                        <a class="nav-link" href="/checkout">Checkout</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="checkout.html">Checkout</a>
+                                        <a class="nav-link" href="/invoice">Invoice</a>
                                     </li>
                                 </ul>
                             </div>

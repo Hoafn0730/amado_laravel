@@ -11,6 +11,10 @@
   border-radius: 50%;
 }
 
+#invoice th {
+  background-color: #f5f7fa;
+}
+
 /* [Master Stylesheet v-1.0.0] */
 /* :: :: 1.0 Import Fonts */
 @font-face {

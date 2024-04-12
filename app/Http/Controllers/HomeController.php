@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+
 
 class HomeController extends Controller
 {
@@ -14,7 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::all()->sortBy('created_at');
+        $products = Product::all()->where('priority', '>', 0)->sortBy('priority');
         $categories = Category::all();
         return view('pages.home', ['products'=> $products]);
     }

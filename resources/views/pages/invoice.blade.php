@@ -13,13 +13,13 @@
                     <table id="invoice" class="table table-responsive">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>Products</th>
-                                <th>Total</th>
-                                <th>Payment gateway</th>
-                                <th>Status</th>
-                                <th>Created At</th>
+                                <th>Tên</th>
+                                <th>Thông tin liên hệ</th>
+                                <th>Sản phẩm</th>
+                                <th>Tổng tiền</th>
+                                <th>Phương thức thanh toán</th>
+                                <th>Trạng thái</th>
+                                <th>Ngày tạo</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,13 +30,19 @@
                                     <h5>{{$order->user_name}}</h5>
                                 </td>
                                 <td>
-                                    <span>{{$order->address}}</span>
+                                    <span>{{$order->address}} ({{$order->phone}})</span>
                                 </td>
                                 <td>
                                     <span>
+                                        @php
+                                        $products = json_decode($order->products);
+                                        @endphp
+
+                                        @if (is_array($products) && count($products) > 0)
                                         @foreach (json_decode($order->products) as $product)
                                         {{ $product->product_name }} x{{ $product->quantity }}<br>
                                         @endforeach
+                                        @endif
                                     </span>
                                 </td>
                                 <td>
