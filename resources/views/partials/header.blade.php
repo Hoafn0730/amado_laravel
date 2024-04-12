@@ -31,10 +31,21 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <span>Tìm kiếm</span>
             </div>
-            <div class="user-menu btn-action">
-                <img class="avatar" src="https://files.fullstack.edu.vn/f8-prod/user_avatars/330533/656b17e84ff15.jpg"
-                    alt="">
-                <span>Hoafn0730</span>
+            <div class="btn-group dropup">
+                <div class="user-menu btn-action" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img class="avatar" src="{{ Auth::user()->avatar }}" alt="">
+                    <span>{{ Auth::user()->name }}</span>
+                </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                    <div class="dropdown-divider"></div>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="dropdown-item">Đăng xuất</button>
+                    </form>
+                </div>
             </div>
 
         </div>

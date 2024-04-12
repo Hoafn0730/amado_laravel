@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="products-catagories-area clearfix">
+
     <div class="amado-pro-catagory clearfix">
 
         @foreach($products as $product)

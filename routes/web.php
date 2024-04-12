@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CategoryController;
@@ -30,27 +31,31 @@ use App\Http\Controllers\UserController;
 */
 
 // User
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/products/{slug}', [DetailController::class, 'index']);
-Route::get('/shop/{slug?}', [ShopController::class, 'index']);
-Route::prefix('cart')->name('cart.')->group(function(){
-    Route::get('/',[CartController::class,'view'])->name('view');
-    Route::get('/add/{product}', [CartController::class ,'addToCart'])->name('add');
-    Route::get('/delete/{id}',[CartController::class,'deleteToCart'])->name('delete');
-    Route::get('/update/{id}',[CartController::class,'updateToCart'])->name('update');
-});
-Route::prefix('checkout')->name('checkout.')->group(function(){
-    Route::get('/',[CheckoutController::class,'view'])->name('view');
-    Route::post('/add', [CheckoutController::class ,'store'])->name('add');
-});
-Route::get('/invoice', [InvoiceController::class, 'index']);
-Route::get('/search', [SearchController::class, 'index']);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/products/{slug}', [DetailController::class, 'index']);
+    Route::get('/shop/{slug?}', [ShopController::class, 'index']);
+    Route::prefix('cart')->name('cart.')->group(function(){
+        Route::get('/',[CartController::class,'view'])->name('view');
+        Route::get('/add/{product}', [CartController::class ,'addToCart'])->name('add');
+        Route::get('/delete/{id}',[CartController::class,'deleteToCart'])->name('delete');
+        Route::get('/update/{id}',[CartController::class,'updateToCart'])->name('update');
+    });
+    Route::prefix('checkout')->name('checkout.')->group(function(){
+        Route::get('/',[CheckoutController::class,'view'])->name('view');
+        Route::post('/add', [CheckoutController::class ,'store'])->name('add');
+    });
+    Route::get('/invoice', [InvoiceController::class, 'index']);
+    Route::get('/search', [SearchController::class, 'index']);
+    Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 
-
-Route::get('/login', function () {
-    return view('pages.login');
 });
 
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
+    Route::match(['GET','POST'], '/register',[AuthController::class, 'register']);
+});
 
 // Admin
 Route::resource('/dashboard', DashboardController::class);
